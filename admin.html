@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio CMS Admin Panel | Fairoz Bashir</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+  <!-- ==========================================
+       PASSCODE LOGIN MODAL
+       ========================================== -->
+  <div class="login-overlay" id="login-overlay">
+    <div class="login-card" id="login-card">
+      <i class="fas fa-user-shield lock-icon"></i>
+      <h2>Portfolio CMS Admin</h2>
+      <p>Enter your secret passcode to access content management.</p>
+
+      <div class="input-group">
+        <label for="admin-passcode-input">Admin Passcode</label>
+        <input type="password" id="admin-passcode-input" class="input-field"
+          placeholder="Enter passcode (Default: admin123)" autofocus>
+      </div>
+
+      <button id="login-btn" class="btn-admin btn-admin-primary" style="width: 100%;">
+        <i class="fas fa-lock-open"></i> Unlock Dashboard
+      </button>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       ADMIN DASHBOARD HEADER
+       ========================================== -->
+  <header class="admin-header">
+    <div class="admin-logo">
+      <i class="fas fa-sliders"></i> Portfolio <span>CMS Admin</span>
+    </div>
+
+    <div class="header-actions">
+      <a href="index.html" target="_blank" class="btn-admin btn-admin-secondary">
+        <i class="fas fa-external-link-alt"></i> View Live Site
+      </a>
+      <button id="export-json-btn" class="btn-admin btn-admin-secondary" title="Export Backup JSON">
+        <i class="fas fa-download"></i> Export JSON
+      </button>
+      <button id="import-json-btn" class="btn-admin btn-admin-secondary" title="Import JSON">
+        <i class="fas fa-upload"></i> Import JSON
+      </button>
+      <input type="file" id="import-file-input" accept=".json" style="display: none;">
+
+      <button id="save-all-btn" class="btn-admin btn-admin-primary">
+        <i class="fas fa-save"></i> Save All Changes
+      </button>
+
+      <button id="logout-btn" class="btn-admin btn-admin-danger" title="Logout">
+        <i class="fas fa-right-from-bracket"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       ADMIN MAIN LAYOUT (SIDEBAR & CONTENT)
+       ========================================== -->
+  <div class="admin-body">
+    <!-- Sidebar Tabs -->
+    <aside class="admin-sidebar">
+      <ul class="nav-tabs">
+        <li>
+          <button class="tab-btn active" data-tab="hero">
+            <i class="fas fa-user-tag"></i> Hero & Personal
+          </button>
+        </li>
+        <li>
+          <button class="tab-btn" data-tab="about">
+            <i class="fas fa-address-card"></i> About Me
+          </button>
+        </li>
+        <li>
+          <button class="tab-btn" data-tab="education">
+            <i class="fas fa-graduation-cap"></i> Qualifications
+          </button>
+        </li>
+        <li>
+          <button class="tab-btn" data-tab="skills">
+            <i class="fas fa-code"></i> Skills & Badges
+          </button>
+        </li>
+        <li>
+          <button class="tab-btn" data-tab="projects">
+            <i class="fas fa-folder-open"></i> Projects
+          </button>
+        </li>
+        <li>
+          <button class="tab-btn" data-tab="memories">
+            <i class="fas fa-camera-retro"></i> College Memories
+          </button>
+        </li>
+        <li>
+          <button class="tab-btn" data-tab="experience">
+            <i class="fas fa-briefcase"></i> Experience
+          </button>
+        </li>
+        <li>
+          <button class="tab-btn" data-tab="contact">
+            <i class="fas fa-paper-plane"></i> Contact Info
+          </button>
+        </li>
+        <li>
+          <button class="tab-btn" data-tab="settings">
+            <i class="fas fa-gear"></i> Settings
+          </button>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Main Content Panel -->
+    <main class="admin-content">
+
+      <!-- PANEL 1: HERO & PERSONAL -->
+      <section id="panel-hero" class="tab-panel active">
+        <h2 class="panel-title">Hero & Personal Information</h2>
+        <p class="panel-subtitle">Manage your header presentation, name, title, bio tagline, and stats counters.</p>
+
+        <div class="editor-card">
+          <div class="form-grid-2">
+            <div class="input-group">
+              <label for="hero-name">Full Name</label>
+              <input type="text" id="hero-name" class="input-field">
+            </div>
+            <div class="input-group">
+              <label for="hero-title">Title / Role</label>
+              <input type="text" id="hero-title" class="input-field">
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label for="hero-status">Status Badge Text</label>
+            <input type="text" id="hero-status" class="input-field">
+          </div>
+
+          <div class="input-group">
+            <label for="hero-bio">Short Tagline / Bio (5 Lines)</label>
+            <textarea id="hero-bio" class="input-field" rows="4"></textarea>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="input-group">
+              <label>Profile Photo</label>
+              <div class="file-picker-wrapper">
+                <label for="hero-photo-file" class="file-picker-btn">
+                  <i class="fas fa-folder-open"></i> Browse Image...
+                </label>
+                <input type="file" id="hero-photo-file" accept="image/*" style="display: none;">
+                <div class="upload-thumb-preview">
+                  <img id="hero-photo-preview" src="assets/hero-portrait.png" alt="Preview">
+                </div>
+              </div>
+              <input type="hidden" id="hero-photo" class="input-field" value="assets/hero-portrait.png">
+            </div>
+
+            <div class="input-group">
+              <label>Downloadable Resume PDF</label>
+              <div class="file-picker-wrapper">
+                <label for="hero-resume-file" class="file-picker-btn">
+                  <i class="fas fa-file-pdf"></i> Browse Resume PDF...
+                </label>
+                <input type="file" id="hero-resume-file" accept=".pdf,application/pdf" style="display: none;">
+                <span id="hero-resume-filename"
+                  style="font-size: 0.85rem; color: var(--admin-gold); font-weight: 500;">assets/resume.pdf</span>
+              </div>
+              <input type="hidden" id="hero-resume" class="input-field" value="assets/resume.pdf">
+            </div>
+          </div>
+        </div>
+
+        <div class="editor-card">
+          <h3>Hero Quick Stats Counter</h3>
+          <div class="form-grid-3" style="margin-top: 16px;">
+            <div class="input-group">
+              <label>Stat 1 Value</label>
+              <input type="number" id="stat1-number" class="input-field">
+              <label style="margin-top: 6px;">Stat 1 Label</label>
+              <input type="text" id="stat1-label" class="input-field">
+            </div>
+
+            <div class="input-group">
+              <label>Stat 2 Value</label>
+              <input type="number" id="stat2-number" class="input-field">
+              <label style="margin-top: 6px;">Stat 2 Label</label>
+              <input type="text" id="stat2-label" class="input-field">
+            </div>
+
+            <div class="input-group">
+              <label>Stat 3 Value</label>
+              <input type="number" id="stat3-number" class="input-field">
+              <label style="margin-top: 6px;">Stat 3 Label</label>
+              <input type="text" id="stat3-label" class="input-field">
+            </div>
+          </div>
+        </div>
+
+        <button id="save-hero-btn" class="btn-admin btn-admin-primary">
+          <i class="fas fa-check"></i> Save Hero Changes
+        </button>
+      </section>
+
+      <!-- PANEL 2: ABOUT ME -->
+      <section id="panel-about" class="tab-panel">
+        <h2 class="panel-title">About Me Narrative</h2>
+        <p class="panel-subtitle">Edit your detailed background paragraphs and career objectives.</p>
+
+        <div class="editor-card">
+          <div class="input-group">
+            <label for="about-p1">Paragraph 1 (Background & Interest)</label>
+            <textarea id="about-p1" class="input-field" rows="4"></textarea>
+          </div>
+
+          <div class="input-group">
+            <label for="about-p2">Paragraph 2 (Career Goals & Vision)</label>
+            <textarea id="about-p2" class="input-field" rows="4"></textarea>
+          </div>
+        </div>
+
+        <button id="save-about-btn" class="btn-admin btn-admin-primary">
+          <i class="fas fa-check"></i> Save About Changes
+        </button>
+      </section>
+
+      <!-- PANEL 3: QUALIFICATIONS & EDUCATION -->
+      <section id="panel-education" class="tab-panel">
+        <h2 class="panel-title">Qualifications & Education</h2>
+        <p class="panel-subtitle">Add or remove degrees, academic accomplishments, and professional certifications.</p>
+
+        <div class="editor-card">
+          <h3>Current Qualifications List</h3>
+          <div id="education-list" class="item-list-container"></div>
+        </div>
+
+        <div class="editor-card">
+          <h3>Add New Degree or Certification</h3>
+          <div class="form-grid-2" style="margin-top: 16px;">
+            <div class="input-group">
+              <label for="new-edu-title">Degree / Certification Title</label>
+              <input type="text" id="new-edu-title" class="input-field"
+                placeholder="e.g. Master of Science in Data Governance">
+            </div>
+            <div class="input-group">
+              <label for="new-edu-inst">Institution Name</label>
+              <input type="text" id="new-edu-inst" class="input-field" placeholder="e.g. Johns Hopkins SAIS">
+            </div>
+          </div>
+          <div class="form-grid-2">
+            <div class="input-group">
+              <label for="new-edu-year">Year / Duration</label>
+              <input type="text" id="new-edu-year" class="input-field" placeholder="e.g. 2024 – 2025">
+            </div>
+            <div class="input-group">
+              <label for="new-edu-type">Type</label>
+              <select id="new-edu-type" class="input-field">
+                <option value="degree">Academic Degree</option>
+                <option value="cert">Professional Certification</option>
+              </select>
+            </div>
+          </div>
+          <button id="add-edu-btn" class="btn-admin btn-admin-primary">
+            <i class="fas fa-plus"></i> Add Qualification
+          </button>
+        </div>
+      </section>
+
+      <!-- PANEL 4: SKILLS & BADGES -->
+      <section id="panel-skills" class="tab-panel">
+        <h2 class="panel-title">Skills & Capabilities</h2>
+        <p class="panel-subtitle">Manage technical skills (with progress bar levels) and soft skill badges.</p>
+
+        <div class="editor-card">
+          <h3>Technical & Data Skills (With Progress %)</h3>
+          <div id="tech-skills-list" class="item-list-container"></div>
+
+          <div class="form-grid-2" style="margin-top: 20px;">
+            <div class="input-group">
+              <label for="new-tech-name">Skill Name</label>
+              <input type="text" id="new-tech-name" class="input-field" placeholder="e.g. Econometric Data Modeling">
+            </div>
+            <div class="input-group">
+              <label for="new-tech-level">Proficiency Level (0% - 100%)</label>
+              <input type="number" id="new-tech-level" class="input-field" value="85" min="10" max="100">
+            </div>
+          </div>
+          <button id="add-tech-skill-btn" class="btn-admin btn-admin-primary">
+            <i class="fas fa-plus"></i> Add Technical Skill
+          </button>
+        </div>
+
+        <div class="editor-card">
+          <h3>Domain & Soft Skill Badges</h3>
+          <div id="soft-skills-list" class="item-list-container"></div>
+
+          <div class="form-grid-2" style="margin-top: 20px;">
+            <div class="input-group">
+              <label for="new-soft-name">Badge Name</label>
+              <input type="text" id="new-soft-name" class="input-field" placeholder="e.g. Diplomatic Negotiation">
+            </div>
+            <div class="input-group">
+              <label for="new-soft-icon">FontAwesome Icon Class</label>
+              <input type="text" id="new-soft-icon" class="input-field" placeholder="e.g. fas fa-handshake">
+            </div>
+          </div>
+          <button id="add-soft-skill-btn" class="btn-admin btn-admin-primary">
+            <i class="fas fa-plus"></i> Add Skill Badge
+          </button>
+        </div>
+      </section>
+
+      <!-- PANEL 5: PROJECTS -->
+      <section id="panel-projects" class="tab-panel">
+        <h2 class="panel-title">Projects & Publications</h2>
+        <p class="panel-subtitle">Manage portfolio project cards, categories, cover graphics, and links.</p>
+
+        <div class="editor-card">
+          <h3>Current Projects List</h3>
+          <div id="projects-list" class="item-list-container"></div>
+        </div>
+
+        <div class="editor-card">
+          <h3>Add New Project Card</h3>
+          <div class="form-grid-2" style="margin-top: 16px;">
+            <div class="input-group">
+              <label for="new-proj-title">Project Title</label>
+              <input type="text" id="new-proj-title" class="input-field"
+                placeholder="e.g. South Asian Trade Corridor Study">
+            </div>
+            <div class="input-group">
+              <label for="new-proj-category">Category Tab</label>
+              <select id="new-proj-category" class="input-field">
+                <option value="geopolitics">Geopolitics</option>
+                <option value="elections">Elections</option>
+                <option value="policy">Policy Briefs</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label for="new-proj-desc">Summary Description</label>
+            <textarea id="new-proj-desc" class="input-field" rows="3"
+              placeholder="Short description of research methodology and findings..."></textarea>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="input-group">
+              <label>Cover Graphic</label>
+              <div class="file-picker-wrapper">
+                <label for="new-proj-file" class="file-picker-btn">
+                  <i class="fas fa-image"></i> Browse Image...
+                </label>
+                <input type="file" id="new-proj-file" accept="image/*" style="display: none;">
+                <div class="upload-thumb-preview">
+                  <img id="new-proj-preview" src="assets/project1.png" alt="Preview">
+                </div>
+              </div>
+              <input type="hidden" id="new-proj-image" class="input-field" value="assets/project1.png">
+            </div>
+            <div class="input-group">
+              <label for="new-proj-tech">Tech / Tool Tags (Comma separated)</label>
+              <input type="text" id="new-proj-tech" class="input-field" placeholder="e.g. R, GIS Mapping, Stata">
+            </div>
+          </div>
+
+          <button id="add-project-btn" class="btn-admin btn-admin-primary">
+            <i class="fas fa-plus"></i> Add Project
+          </button>
+        </div>
+      </section>
+
+      <!-- PANEL 6: COLLEGE MEMORIES -->
+      <section id="panel-memories" class="tab-panel">
+        <h2 class="panel-title">College Memories & Photo Gallery</h2>
+        <p class="panel-subtitle">Manage campus moments, graduation photos, debate society pictures, and memory
+          captions.</p>
+
+        <div class="editor-card">
+          <h3>Current College Memories List</h3>
+          <div id="memories-list" class="item-list-container"></div>
+        </div>
+
+        <div class="editor-card">
+          <h3>Add New College Memory Photo</h3>
+          <div class="form-grid-2" style="margin-top: 16px;">
+            <div class="input-group">
+              <label for="new-mem-title">Memory Event Title</label>
+              <input type="text" id="new-mem-title" class="input-field" placeholder="e.g. Graduation Ceremony 2022">
+            </div>
+            <div class="input-group">
+              <label for="new-mem-category">Category Tab</label>
+              <select id="new-mem-category" class="input-field">
+                <option value="graduation">Graduation</option>
+                <option value="debates">Debates & MUN</option>
+                <option value="campus">Campus Life</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="input-group">
+              <label for="new-mem-date">Date / Month</label>
+              <input type="text" id="new-mem-date" class="input-field" placeholder="e.g. June 2022">
+            </div>
+            <div class="input-group">
+              <label for="new-mem-location">Location / Campus Hall</label>
+              <input type="text" id="new-mem-location" class="input-field" placeholder="e.g. Main Auditorium">
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label>Select Photo File</label>
+            <div class="file-picker-wrapper">
+              <label for="new-mem-file" class="file-picker-btn">
+                <i class="fas fa-camera"></i> Browse Image...
+              </label>
+              <input type="file" id="new-mem-file" accept="image/*" style="display: none;">
+              <div class="upload-thumb-preview">
+                <img id="new-mem-preview" src="assets/memory1.png" alt="Preview">
+              </div>
+            </div>
+            <input type="hidden" id="new-mem-image" class="input-field" value="assets/memory1.png">
+          </div>
+
+          <div class="input-group">
+            <label for="new-mem-desc">Description / Memory Caption</label>
+            <textarea id="new-mem-desc" class="input-field" rows="3"
+              placeholder="Brief story or context about this college memory..."></textarea>
+          </div>
+
+          <button id="add-memory-btn" class="btn-admin btn-admin-primary">
+            <i class="fas fa-plus"></i> Add Memory Photo
+          </button>
+        </div>
+      </section>
+
+      <!-- PANEL 7: EXPERIENCE -->
+      <section id="panel-experience" class="tab-panel">
+        <h2 class="panel-title">Professional Experience</h2>
+        <p class="panel-subtitle">Add or edit career positions, organizations, and key achievements.</p>
+
+        <div class="editor-card">
+          <h3>Current Positions List</h3>
+          <div id="experience-list" class="item-list-container"></div>
+        </div>
+
+        <div class="editor-card">
+          <h3>Add New Work Position</h3>
+          <div class="form-grid-2" style="margin-top: 16px;">
+            <div class="input-group">
+              <label for="new-exp-role">Job Title / Role</label>
+              <input type="text" id="new-exp-role" class="input-field" placeholder="e.g. Senior Policy Strategist">
+            </div>
+            <div class="input-group">
+              <label for="new-exp-company">Company / Institute</label>
+              <input type="text" id="new-exp-company" class="input-field" placeholder="e.g. Diplomatic Advisory Group">
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label for="new-exp-duration">Duration</label>
+            <input type="text" id="new-exp-duration" class="input-field" placeholder="e.g. 2024 – Present">
+          </div>
+
+          <div class="input-group">
+            <label for="new-exp-resp1">Key Responsibility 1</label>
+            <input type="text" id="new-exp-resp1" class="input-field">
+          </div>
+          <div class="input-group">
+            <label for="new-exp-resp2">Key Responsibility 2</label>
+            <input type="text" id="new-exp-resp2" class="input-field">
+          </div>
+
+          <button id="add-exp-btn" class="btn-admin btn-admin-primary">
+            <i class="fas fa-plus"></i> Add Position
+          </button>
+        </div>
+      </section>
+
+      <!-- PANEL 8: CONTACT INFO -->
+      <section id="panel-contact" class="tab-panel">
+        <h2 class="panel-title">Contact & Social Links</h2>
+        <p class="panel-subtitle">Update pre-filled email mailto links, phone number, location, and social media
+          handles.</p>
+
+        <div class="editor-card">
+          <div class="form-grid-3">
+            <div class="input-group">
+              <label for="contact-email">Email Address</label>
+              <input type="email" id="contact-email" class="input-field">
+            </div>
+            <div class="input-group">
+              <label for="contact-phone">Phone Number</label>
+              <input type="text" id="contact-phone" class="input-field">
+            </div>
+            <div class="input-group">
+              <label for="contact-location">Location / Cities</label>
+              <input type="text" id="contact-location" class="input-field">
+            </div>
+          </div>
+
+          <h3 style="margin-top: 20px; margin-bottom: 14px;">Social Media URLs</h3>
+          <div class="form-grid-2">
+            <div class="input-group">
+              <label for="social-linkedin">LinkedIn Profile URL</label>
+              <input type="url" id="social-linkedin" class="input-field">
+            </div>
+            <div class="input-group">
+              <label for="social-github">GitHub Profile URL</label>
+              <input type="url" id="social-github" class="input-field">
+            </div>
+            <div class="input-group">
+              <label for="social-twitter">Twitter / X Profile URL</label>
+              <input type="url" id="social-twitter" class="input-field">
+            </div>
+            <div class="input-group">
+              <label for="social-instagram">Instagram Profile URL</label>
+              <input type="url" id="social-instagram" class="input-field">
+            </div>
+          </div>
+        </div>
+
+        <button id="save-contact-btn" class="btn-admin btn-admin-primary">
+          <i class="fas fa-check"></i> Save Contact Details
+        </button>
+      </section>
+
+      <!-- PANEL 9: SECURITY & SETTINGS -->
+      <section id="panel-settings" class="tab-panel">
+        <h2 class="panel-title">CMS Settings & Backups</h2>
+        <p class="panel-subtitle">Change passcode credentials or reset data to original factory defaults.</p>
+
+        <div class="editor-card">
+          <h3>Change Admin Passcode</h3>
+          <div class="input-group" style="margin-top: 14px; max-width: 400px;">
+            <label for="new-passcode">New Passcode</label>
+            <input type="password" id="new-passcode" class="input-field" placeholder="Enter new passcode (min 4 chars)">
+          </div>
+          <button id="change-passcode-btn" class="btn-admin btn-admin-primary">
+            <i class="fas fa-key"></i> Update Passcode
+          </button>
+        </div>
+
+        <div class="editor-card">
+          <h3 style="color: var(--admin-danger);">Danger Zone</h3>
+          <p style="color: var(--admin-muted); font-size: 0.9rem; margin-bottom: 16px;">
+            Resetting to defaults will erase all custom edits saved in your browser's local storage and restore the
+            original portfolio data.
+          </p>
+          <button id="reset-defaults-btn" class="btn-admin btn-admin-danger">
+            <i class="fas fa-rotate-left"></i> Reset All Data to Defaults
+          </button>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Toast Notification Popup Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Admin Logic Script -->
+  <script src="admin.js"></script>
+</body>
+
+</html>

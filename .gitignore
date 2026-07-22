@@ -1,0 +1,8 @@
+# Node & IDE
+.vscode/
+node_modules/
+*.log
+
+# Operating System
+.DS_Store
+Thumbs.db

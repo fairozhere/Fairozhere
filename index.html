@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal Portfolio of Fairoz Bashir - Political Analyst, Geopolitical Risk Specialist & Policy Researcher.">
+  <meta name="keywords" content="Fairoz Bashir, Political Analyst, Policy Researcher, Geopolitical Risk, International Relations, Electoral Forecasting">
+  <meta name="author" content="Fairoz Bashir">
+  <title>Fairoz Bashir | Political Analyst & Policy Researcher</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==========================================
+       HEADER & NAVIGATION BAR
+       ========================================== -->
+  <header class="navbar">
+    <div class="container">
+      <a href="#hero" class="nav-brand">
+        <span class="dynamic-name">Fairoz Bashir</span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#qualifications" class="nav-link">Qualifications</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#memories" class="nav-link">Memories</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-controls">
+        <!-- Dark / Light Theme Toggle -->
+        <button id="theme-toggle-btn" class="theme-btn" aria-label="Toggle Theme" title="Switch Theme">
+          <i class="fas fa-sun"></i>
+        </button>
+
+        <!-- Mobile Drawer Menu Button -->
+        <button id="mobile-toggle-btn" class="mobile-toggle" aria-label="Toggle Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================
+         SECTION 1: HERO / HEADER
+         ========================================== -->
+    <section id="hero" class="hero-section">
+      <div class="hero-bg-glow"></div>
+      <div class="container">
+        <div class="hero-grid">
+          
+          <!-- Hero Text Content -->
+          <div class="hero-content">
+            <div class="badge" id="hero-badge-display">
+              <i class="fas fa-circle-dot"></i> Available for Consultancies & Speaking
+            </div>
+
+            <h1 class="hero-title">
+              Hi, I'm <span class="highlight dynamic-name">Fairoz Bashir</span>
+            </h1>
+            <h2 class="hero-role" id="hero-role-display">Political Analyst & Policy Researcher</h2>
+
+            <p class="hero-bio" id="hero-bio-display">
+              Specializing in geopolitical risk assessment, electoral forecasting, and strategic foreign policy. 
+              I bridge empirical social data with executive decision-making to clarify complex global trends. 
+              With over 6 years of research experience across think tanks and diplomatic institutions, 
+              I deliver actionable intelligence on global trade, legislative shifts, and security dynamics. 
+              Passionate about evidence-based governance and international affairs.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="hero-actions">
+              <a href="assets/resume.pdf" class="btn btn-primary" download="Fairoz_Bashir_Resume.pdf" id="download-resume-btn">
+                <i class="fas fa-file-arrow-down"></i> Download Resume
+              </a>
+              <a href="#contact" class="btn btn-outline">
+                <i class="fas fa-paper-plane"></i> Get in Touch
+              </a>
+            </div>
+
+            <!-- Hero Quick Stats Counter -->
+            <div class="hero-stats reveal">
+              <div class="stat-item">
+                <span class="stat-number" id="stat1-num" data-target="6" data-suffix="+">0</span>
+                <span class="stat-label" id="stat1-lbl">Years Experience</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" id="stat2-num" data-target="25" data-suffix="+">0</span>
+                <span class="stat-label" id="stat2-lbl">Policy Papers</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" id="stat3-num" data-target="15" data-suffix="+">0</span>
+                <span class="stat-label" id="stat3-lbl">Global Projects</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Image & Floating Badge -->
+          <div class="hero-image-wrapper">
+            <div class="hero-image-frame">
+              <img src="assets/hero-portrait.png" alt="Fairoz Bashir - Political Analyst" id="hero-photo-display">
+            </div>
+            
+            <div class="hero-floating-card">
+              <i class="fas fa-award"></i>
+              <div class="card-text">
+                <h4>Geopolitical Specialist</h4>
+                <p>Empirical Risk & Policy Modeling</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 2: ABOUT ME
+         ========================================== -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-subtitle">Background & Vision</span>
+          <h2 class="section-title">About Me</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text reveal" id="about-text-container">
+            <p>
+              I am a dedicated Political Analyst with a robust background in international relations, public policy analysis, and quantitative political research. My core focus centers on deciphering how global geopolitical shifts influence market stability, national elections, and international regulatory frameworks.
+            </p>
+            <p>
+              Throughout my career, I have collaborated with diplomatic missions, independent policy institutes, and international organizations to produce rigorous, data-backed policy briefings. My long-term goal is to shape proactive foreign policy frameworks that foster diplomatic resilience and sustainable regional stability.
+            </p>
+          </div>
+
+          <!-- Core Focus Cards Container -->
+          <div class="about-highlights reveal" id="about-focus-cards">
+            <div class="focus-card">
+              <i class="fas fa-globe-americas"></i>
+              <h4>Geopolitical Risk Assessment</h4>
+              <p>Analyzing global conflict vectors, energy corridor vulnerabilities, and trade sanction impacts.</p>
+            </div>
+            <div class="focus-card">
+              <i class="fas fa-chart-line"></i>
+              <h4>Electoral Forecasting</h4>
+              <p>Utilizing statistical modeling and polling analytics to predict electoral shifts and voter behavior.</p>
+            </div>
+            <div class="focus-card">
+              <i class="fas fa-scroll"></i>
+              <h4>Foreign Policy Briefs</h4>
+              <p>Authoring executive intelligence summaries and strategic recommendations for leadership.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 3: QUALIFICATIONS / EDUCATION
+         ========================================== -->
+    <section id="qualifications" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-subtitle">Academic Background</span>
+          <h2 class="section-title">Qualifications & Education</h2>
+        </div>
+
+        <div class="timeline" id="qualifications-timeline">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 4: SKILLS
+         ========================================== -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-subtitle">Core Capabilities</span>
+          <h2 class="section-title">Skills & Expertise</h2>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Technical & Data Skills -->
+          <div class="skills-category reveal">
+            <h3><i class="fas fa-laptop-code"></i> Technical & Data Skills</h3>
+            <div class="progress-skills" id="tech-skills-container">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+
+          <!-- Domain & Soft Skills -->
+          <div class="skills-category reveal">
+            <h3><i class="fas fa-brain"></i> Domain & Soft Skills</h3>
+            <div class="badge-skills" id="soft-skills-container">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 5: PROJECTS & PUBLICATIONS
+         ========================================== -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-subtitle">Selected Work</span>
+          <h2 class="section-title">Projects & Publications</h2>
+        </div>
+
+        <div class="project-filters reveal">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="geopolitics">Geopolitics</button>
+          <button class="filter-btn" data-filter="elections">Elections</button>
+          <button class="filter-btn" data-filter="policy">Policy Briefs</button>
+        </div>
+
+        <div class="projects-grid" id="projects-grid-container">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 6: COLLEGE MEMORIES & CAMPUS MOMENTS
+         ========================================== -->
+    <section id="memories" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-subtitle">Campus Life & Debates</span>
+          <h2 class="section-title">College Memories</h2>
+        </div>
+
+        <!-- Memory Filter Tabs -->
+        <div class="memory-filters project-filters reveal">
+          <button class="filter-btn active" data-filter="all">All Moments</button>
+          <button class="filter-btn" data-filter="graduation">Graduation</button>
+          <button class="filter-btn" data-filter="debates">Debates & MUN</button>
+          <button class="filter-btn" data-filter="campus">Campus Life</button>
+        </div>
+
+        <!-- Memories Photo Grid Container -->
+        <div class="memories-grid" id="memories-grid-container">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 7: EXPERIENCE
+         ========================================== -->
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-subtitle">Career Path</span>
+          <h2 class="section-title">Professional Experience</h2>
+        </div>
+
+        <div class="experience-list" id="experience-list-container">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 8: CONTACT / CONNECT
+         ========================================== -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-subtitle">Let's Connect</span>
+          <h2 class="section-title">Get in Touch</h2>
+        </div>
+
+        <div class="contact-card reveal">
+          <h3>Have a Project, Research Proposal, or Speaking Request?</h3>
+          <p>
+            I am always interested in discussing geopolitical analysis, policy research opportunities, or academic collaborations. Feel free to reach out directly via email or social channels!
+          </p>
+
+          <div class="contact-info-grid">
+            <div class="info-item">
+              <i class="fas fa-envelope"></i>
+              <span class="dynamic-email">fairoz.bashir@example.com</span>
+            </div>
+
+            <div class="info-item">
+              <i class="fas fa-phone"></i>
+              <span class="dynamic-phone">+1 (555) 234-5678</span>
+            </div>
+
+            <div class="info-item">
+              <i class="fas fa-location-dot"></i>
+              <span class="dynamic-location">Islamabad / Washington D.C.</span>
+            </div>
+          </div>
+
+          <a href="mailto:fairoz.bashir@example.com?subject=Let's%20Connect%20-%20Political%20Analysis" class="btn btn-primary" id="mailto-btn">
+            <i class="fas fa-paper-plane"></i> Send an Email
+          </a>
+
+          <div class="social-links-grid">
+            <a href="https://linkedin.com/in/fairoz-bashir" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="LinkedIn" id="social-linkedin-link">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+
+            <a href="https://github.com/fairoz-bashir" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="GitHub" id="social-github-link">
+              <i class="fab fa-github"></i>
+            </a>
+
+            <a href="https://x.com/fairoz_bashir" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="Twitter / X" id="social-twitter-link">
+              <i class="fab fa-x-twitter"></i>
+            </a>
+
+            <a href="https://instagram.com/fairoz_bashir" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="Instagram" id="social-instagram-link">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================
+       MEMORY LIGHTBOX MODAL DIALOG
+       ========================================== -->
+  <div class="lightbox-modal" id="memory-lightbox-modal">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close-btn" title="Close Lightbox">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <div class="lightbox-img-wrapper">
+        <img src="assets/memory1.png" alt="Memory Photo" id="lightbox-img">
+      </div>
+
+      <div class="lightbox-body">
+        <h3 id="lightbox-title">Memory Title</h3>
+        <div class="lightbox-details" id="lightbox-meta">
+          <i class="fas fa-calendar"></i> Date | <i class="fas fa-location-dot"></i> Location
+        </div>
+        <p id="lightbox-desc">Memory detailed description...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-text">
+          &copy; <span id="current-year">2026</span> <span class="dynamic-name">Fairoz Bashir</span>. All rights reserved. 
+          | <a href="admin.html" target="_blank" style="color: var(--accent-primary); text-decoration: underline; margin-left: 6px;"><i class="fas fa-lock"></i> Admin CMS</a>
+        </div>
+
+        <button id="back-to-top" class="back-to-top" title="Back to top">
+          <i class="fas fa-chevron-up"></i>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Custom JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>

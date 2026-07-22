@@ -1,0 +1,219 @@
+{
+  "personal": {
+    "name": "Fairoz Bashir",
+    "title": "Political Analyst & Policy Researcher",
+    "statusBadge": "Available for Consultancies & Speaking",
+    "bio": "Specializing in geopolitical risk assessment, electoral forecasting, and strategic foreign policy. I bridge empirical social data with executive decision-making to clarify complex global trends. With over 6 years of research experience across think tanks and diplomatic institutions, I deliver actionable intelligence on global trade, legislative shifts, and security dynamics. Passionate about evidence-based governance and international affairs.",
+    "photoUrl": "assets/hero-portrait.png",
+    "resumeUrl": "assets/resume.pdf",
+    "stats": [
+      { "number": 6, "suffix": "+", "label": "Years Experience" },
+      { "number": 25, "suffix": "+", "label": "Policy Papers" },
+      { "number": 15, "suffix": "+", "label": "Global Projects" }
+    ]
+  },
+  "about": {
+    "paragraphs": [
+      "I am a dedicated Political Analyst with a robust background in international relations, public policy analysis, and quantitative political research. My core focus centers on deciphering how global geopolitical shifts influence market stability, national elections, and international regulatory frameworks.",
+      "Throughout my career, I have collaborated with diplomatic missions, independent policy institutes, and international organizations to produce rigorous, data-backed policy briefings. My long-term goal is to shape proactive foreign policy frameworks that foster diplomatic resilience and sustainable regional stability."
+    ],
+    "focusCards": [
+      {
+        "icon": "fas fa-globe-americas",
+        "title": "Geopolitical Risk Assessment",
+        "desc": "Analyzing global conflict vectors, energy corridor vulnerabilities, and trade sanction impacts."
+      },
+      {
+        "icon": "fas fa-chart-line",
+        "title": "Electoral Forecasting",
+        "desc": "Utilizing statistical modeling and polling analytics to predict electoral shifts and voter behavior."
+      },
+      {
+        "icon": "fas fa-scroll",
+        "title": "Foreign Policy Briefs",
+        "desc": "Authoring executive intelligence summaries and strategic recommendations for leadership."
+      }
+    ]
+  },
+  "education": [
+    {
+      "id": "edu-1",
+      "year": "2020 – 2022",
+      "title": "Master of Science in Political Science & Public Policy",
+      "institution": "Quaid-i-Azam University / SAIS Exchange Program",
+      "desc": "Specialized in Geopolitical Modeling, Comparative Politics, and Advanced Statistical Data Analysis for Social Policy.",
+      "type": "degree"
+    },
+    {
+      "id": "edu-2",
+      "year": "2016 – 2020",
+      "title": "Bachelor of Arts in International Relations",
+      "institution": "National Defence University",
+      "desc": "Graduated with High Distinction. Thesis focused on multilateral trade corridors and regional security cooperation.",
+      "type": "degree"
+    }
+  ],
+  "certifications": [
+    {
+      "id": "cert-1",
+      "year": "2024",
+      "title": "AWS Certified Data Analytics & Social Data Mining",
+      "institution": "Amazon Web Services & Harvard Online",
+      "desc": "Certified in managing cloud analytics infrastructure and automated public dataset scraping for legislative tracking.",
+      "type": "cert"
+    },
+    {
+      "id": "cert-2",
+      "year": "2023",
+      "title": "Geopolitical Risk & Intelligence Analysis Certification",
+      "institution": "School of Advanced International Studies (SAIS)",
+      "desc": "Comprehensive training in scenario planning, war-gaming methodologies, and sovereign risk modeling.",
+      "type": "cert"
+    }
+  ],
+  "skills": {
+    "technical": [
+      { "name": "Policy Research & Synthesis", "level": 95 },
+      { "name": "Quantitative Analysis (R, SPSS, Stata)", "level": 90 },
+      { "name": "Electoral Forecasting & Modeling", "level": 85 },
+      { "name": "GIS Spatial Mapping & Tableau", "level": 80 },
+      { "name": "Python for Social Data Mining", "level": 78 }
+    ],
+    "soft": [
+      { "icon": "fas fa-shield-alt", "name": "Geopolitical Risk Assessment" },
+      { "icon": "fas fa-comments", "name": "Strategic Communications" },
+      { "icon": "fas fa-handshake", "name": "Stakeholder Diplomacy" },
+      { "icon": "fas fa-microphone", "name": "Public Speaking & Briefing" },
+      { "icon": "fas fa-lightbulb", "name": "Problem Solving under Crisis" },
+      { "icon": "fas fa-pen-nib", "name": "Legislative & Policy Drafting" },
+      { "icon": "fas fa-users", "name": "Cross-Functional Teamwork" },
+      { "icon": "fas fa-compass", "name": "Scenario Planning" },
+      { "icon": "fas fa-network-wired", "name": "Network Analysis" }
+    ]
+  },
+  "projects": [
+    {
+      "id": "proj-1",
+      "title": "Global Geopolitical Risk Index 2025",
+      "category": "geopolitics",
+      "categoryLabel": "Geopolitics",
+      "desc": "An empirical risk-scoring dashboard evaluating trade sanction probability, energy security vulnerabilities, and sovereign risk indexes across 40 emerging market nations.",
+      "image": "assets/project1.png",
+      "tech": ["R", "GIS Mapping", "Stata", "Policy Modeling"],
+      "link": "assets/resume.pdf",
+      "linkText": "Read Brief",
+      "repo": "https://github.com/fairoz-bashir"
+    },
+    {
+      "id": "proj-2",
+      "title": "Electoral Dynamics & Voter Shift Analysis",
+      "category": "elections",
+      "categoryLabel": "Elections",
+      "desc": "A quantitative study analyzing demographic shifts, polling variance, and swing-district economic sentiment across recent national parliamentary elections.",
+      "image": "assets/project2.png",
+      "tech": ["Python", "SPSS", "Demographic Data", "Visualization"],
+      "link": "assets/resume.pdf",
+      "linkText": "View Report",
+      "repo": "https://github.com/fairoz-bashir"
+    },
+    {
+      "id": "proj-3",
+      "title": "Foreign Policy & Strategic Trade Brief",
+      "category": "policy",
+      "categoryLabel": "Policy Briefs",
+      "desc": "Executive policy document outlining multilateral trade corridor resilience, diplomatic leverage strategies, and supply chain vulnerability mitigation.",
+      "image": "assets/project3.png",
+      "tech": ["Qualitative Research", "Diplomatic Strategy", "Trade Policy"],
+      "link": "assets/resume.pdf",
+      "linkText": "Read Executive Summary",
+      "repo": ""
+    }
+  ],
+  "memories": [
+    {
+      "id": "mem-1",
+      "title": "Graduation Convocation Day",
+      "category": "graduation",
+      "categoryLabel": "Graduation",
+      "date": "June 2022",
+      "location": "SAIS Auditorium",
+      "desc": "Receiving Master's degree in Public Policy alongside thesis mentor and colleagues.",
+      "image": "assets/memory1.png"
+    },
+    {
+      "id": "mem-2",
+      "title": "National Model UN Championship",
+      "category": "debates",
+      "categoryLabel": "Debates & MUN",
+      "date": "November 2021",
+      "location": "Diplomatic Assembly Hall",
+      "desc": "Representing delegate delegation in security council debate on international trade corridors.",
+      "image": "assets/memory2.png"
+    },
+    {
+      "id": "mem-3",
+      "title": "Policy Research Group Collaboration",
+      "category": "campus",
+      "categoryLabel": "Campus Life",
+      "date": "March 2021",
+      "location": "Central Library",
+      "desc": "Late night quantitative data analysis session with the student social research society.",
+      "image": "assets/memory3.png"
+    },
+    {
+      "id": "mem-4",
+      "title": "Annual Foreign Policy Symposium",
+      "category": "debates",
+      "categoryLabel": "Debates & MUN",
+      "date": "April 2022",
+      "location": "University Center",
+      "desc": "Panel discussion presentation on South Asian regional economic integration.",
+      "image": "assets/memory4.png"
+    }
+  ],
+  "experience": [
+    {
+      "id": "exp-1",
+      "role": "Senior Political Analyst",
+      "company": "Global Policy Institute",
+      "duration": "2023 – Present",
+      "responsibilities": [
+        "Lead a team of 4 researchers producing quarterly geopolitical risk assessments for international institutional clients.",
+        "Engineered statistical forecasting models for legislative voting patterns, attaining an 88% predictive accuracy rate.",
+        "Briefed executive stakeholders and diplomatic envoys on emerging trade corridor policies and sanctions compliance."
+      ]
+    },
+    {
+      "id": "exp-2",
+      "role": "Policy Research Associate",
+      "company": "International Affairs Center",
+      "duration": "2021 – 2023",
+      "responsibilities": [
+        "Authored 8 published peer-reviewed whitepapers on South Asian regional security and multilateral economic pacts.",
+        "Analyzed large-scale voter sentiment datasets using R and SPSS to evaluate public policy reception.",
+        "Organized roundtables with government ministers, academic scholars, and foreign ambassadors."
+      ]
+    },
+    {
+      "id": "exp-3",
+      "role": "Legislative Research Assistant",
+      "company": "Ministry of Information & Parliamentary Affairs",
+      "duration": "2020 – 2021",
+      "responsibilities": [
+        "Drafted comprehensive briefings for parliamentary committee hearings on foreign press and communication bills.",
+        "Monitored international news sentiment and summarized daily diplomatic intelligence for senior leadership."
+      ]
+    }
+  ],
+  "contact": {
+    "email": "fairoz.bashir@example.com",
+    "phone": "+1 (555) 234-5678",
+    "location": "Islamabad / Washington D.C.",
+    "social": {
+      "linkedin": "https://linkedin.com/in/fairoz-bashir",
+      "github": "https://github.com/fairoz-bashir",
+      "twitter": "https://x.com/fairoz_bashir",
+      "instagram": "https://instagram.com/fairoz_bashir"
+    }
+  }
+}
